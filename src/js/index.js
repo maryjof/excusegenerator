@@ -6,32 +6,30 @@ import "../assets/img/4geeks.ico";
 //import 'breathecode-dom'; //DOM override to make JS easier to use
 import "../style/index.scss";
 
-window.onload = () => {
-  document.querySelector("#btn").addEventListener(click), () => {
-  document.querySelector("#random-excuses").innerHTML = generateExcuse();
-  };
-  console.log("Hello Rigo from the console!");
-};
+let whoIndex = ["The elephant", "My abuelo", "Our tiger", "My sister"];
+let whatIndex = [
+  "ate my pizza",
+  "peed my homework",
+  "bit my hand",
+  "broke my nails"
+];
+let whenIndex = [
+  "before the class",
+  "right on time",
+  "when I finished",
+  "during my lunch",
+  "while I was playing"
+];
 
-let generateExcuse = () => {
-  let who = ["The elephant", "My abuelo", "Our tiger", "My sister"];
-  let what = [
-    "ate my pizza",
-    "peed my homework",
-    "bit my hand",
-    "broke my nails"
-  ];
-  let when = [
-    "before the class",
-    "right on time",
-    "when I finished",
-    "during my lunch",
-    "while I was praying"
-  ];
+function change() {
+  elem.innerHTML =
+    whoIndex[Math.floor(Math.random() * whoIndex.length)] +
+    " " +
+    whatIndex[Math.floor(Math.random() * whatIndex.length)] +
+    " " +
+    whenIndex[Math.floor(Math.random() * whenIndex.length)];
+}
+let elem = document.getElementById("excuse");
+// setInterval(change, 1000);
 
-  let whoIndex = Math.floor(Math.random() * who.length);
-  let whatIndex = Math.floor(Math.random() * what.length);
-  let whenIndex = Math.floor(Math.random() * when.length);
-
-  return who[whoIndex] + " " + what[whatIndex] + " " + when[whenIndex] + " " + ;
-};
+document.getElementById("button").onclick = change;
